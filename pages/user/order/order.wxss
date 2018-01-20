@@ -1,0 +1,149 @@
+.page .page__bd {
+	background: #ededed;
+}
+
+.weui-navbar {
+	background: #fff;
+}
+
+.order-item {
+	background: #fff;
+	margin-bottom: 18rpx;
+}
+
+.order-item .item-top {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	height: 88rpx;
+	padding: 0 40rpx;
+	font-size: 14px;
+}
+
+.order-item .item-top .booklist-name {
+	display: block;
+	max-width: 70%;
+	white-space: nowrap;
+	overflow: hidden;
+	text-overflow: ellipsis;
+}
+
+.order-item .item-book {
+	display: flex;
+	justify-content: space-between;
+	height: 200rpx;
+	padding: 12rpx 40rpx;
+	background: #fafafa;
+	border-bottom: 3rpx solid #ededed;
+}
+
+.order-item .item-book:last-of-type {
+	border-bottom: none;
+}
+
+.order-item .item-book .book-left {
+	display: flex;
+	align-items: center;
+	max-width: 90%;
+}
+
+.book-left .left-image {
+	width: 140rpx;
+	height: 177rpx;
+}
+
+.book-left .left-image image {
+	width: 100%;
+	height: 100%;
+}
+
+.book-left .left-text {
+	display: flex;
+	flex-direction: column;
+	align-self: baseline;
+	max-width: 70%;
+	padding-left: 20rpx;
+	padding-top: 20rpx;
+}
+
+.book-left .left-text .name {
+	font-size: 14px;
+}
+
+.book-left .left-text .work-name {
+	font-size: 12px;
+	color: #999;
+}
+
+.order-item .item-book .book-right {
+	display: flex;
+	justify-content: flex-end;
+	padding-top: 20rpx;
+	position: relative;
+}
+
+.item-book .book-right .price {
+	font-size: 14px;
+}
+
+.item-book .book-right .number {
+	position: absolute;
+	bottom: 8rpx;
+}
+
+.item-center .statistics {
+	display: flex;
+	justify-content: flex-end;
+	-ms-align-items: center;
+	align-items: center;
+	height: 80rpx;
+	padding: 0 40rpx;
+	font-size: 12px;
+}
+
+.item-center .statistics .price {
+	font-size: 16px;
+}
+
+.order-item .item-bottom {
+	display: flex;
+	justify-content: flex-end;
+	-ms-align-items: center;
+	align-items: center;
+	height: 100rpx;
+	border-top: 1rpx solid #f0f0f0;
+	padding: 0 40rpx;
+}
+
+.order-item .item-bottom .delete {
+	width: 145rpx;
+	height: 54rpx;
+	line-height: 54rpx;
+	border-radius: 27rpx;
+	border: 1rpx solid #adadad;
+	text-align: center;
+	font-size: 12px;
+	margin-left: 18rpx;
+}
+
+.order-item .item-bottom .affirm,
+.order-item .item-bottom .invoice,
+.order-item .item-bottom .give,
+.order-item .item-bottom .logistics {
+	width: 145rpx;
+	height: 54rpx;
+	line-height: 54rpx;
+	border-radius: 27rpx;
+	border: 1rpx solid #ff4444;
+	background: #ff4444;
+	color: #fff;
+	text-align: center;
+	font-size: 12px;
+	margin-left: 18rpx;
+}
+
+.order-item .item-bottom .invoice {
+	background: #ff761b;
+	border: 1rpx solid #ff761b;
+	margin-left: 18rpx;
+}

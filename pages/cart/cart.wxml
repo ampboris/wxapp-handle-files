@@ -1,0 +1,55 @@
+<view class="cart">
+	<view class="cart-title" bindtap="cartEditFun">
+		<text>{{isEdit ? '完成' : '编辑'}}</text>
+	</view>
+    <view class="weui-loadmore" wx:if="{{loadmore}}">
+        <view class="weui-loading"></view>
+        <view class="weui-loadmore__tips">正在加载</view>
+    </view>
+    <view class="cart-item" wx:for="{{cartList}}" wx:for-index="index">
+        <view class="title">书单：{{item.title}}</view>
+        <view class="bookinfo" wx:for="{{item.items}}" wx:for-index="i">
+            <view class="weui-cell__bd">
+                <view class="select-icon">
+                    <icon wx:if="{{item.checked}}" type="success" color="#ff4444" bindtap="selectList" data-index="{{index}}" data-i="{{i}}"/>
+                    <icon wx:else type="circle" bindtap="selectList" data-index="{{index}}" data-i="{{i}}"/>
+                </view>
+                <view class="book-left">
+                    <view class="left-image">
+                        <image src="{{item.picPath}}"></image>
+                    </view>
+                    <view class="left-text" wx:if="{{!isEdit}}">
+                        <text class="name">{{item.bookName}}</text>
+                        <text class="work-name">{{item.author}} 著</text>
+                        <view class="book-right">
+                            <text class="color-red price">¥{{item.price}}</text>
+                            <text class="number">x{{item.quantity}}</text>
+                        </view>
+                    </view>
+                    <view class="modified" wx:if="{{isEdit}}">
+                        <view class="modified-item">
+                            <view class="minus" bindtap="minusCount" data-index="{{index}}" data-i="{{i}}" data-id="{{item.id}}">-</view>
+                            <input type="number" value="{{item.quantity}}" bindinput="changeInput" data-index="{{index}}" data-i="{{i}}" data-id="{{item.id}}"/>
+                            <view class="add" bindtap="addCount" data-index="{{index}}" data-i="{{i}}" data-id="{{item.id}}">+</view>
+                        </view>
+                    </view>
+                </view>
+            </view>
+        </view>
+    </view>
+</view>
+<view class="cart-bottom">
+    <view class="select-icon">
+        <icon wx:if="{{selectAllStatus}}" type="success" color="#ff4444" bindtap="selectAll" />
+        <icon wx:else type="circle" bindtap="selectAll"/>
+    </view>
+    <view class="bottom-right" wx:if="{{!isEdit}}">
+        <text class="total">合计：<text class="color-red">¥{{total}}</text></text>
+        <view class="give">赠朋友</view>
+        <navigator url="../submitOrder/submitOrder" hover-class="none">
+            <view class="settlement">结算</view>
+        </navigator>
+    </view>
+    <view class="bottom-del" wx:elif="{{isEdit}}" bindtap="delCart">删除</view>
+</view>
+<view class="message {{showMessage ? 'fade-in' : ''}}" hidden="{{!showMessage}}">{{messageContent}}</view>
